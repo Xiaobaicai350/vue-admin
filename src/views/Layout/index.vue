@@ -13,37 +13,19 @@
             <i class="el-icon-menu"></i>
             <span slot="title">首页</span>
           </el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>反馈异常信息</span>
-            </template>
-            <el-menu-item-group>
-              <template slot="title">提交异常信息</template>
-              <el-menu-item index="1-1" @click="toEstimated"
-                >预估AQI等级
-              </el-menu-item>
-              <el-menu-item index="1-2" @click="toSubmitExInformation"
-                >提交异常信息</el-menu-item
-              >
-            </el-menu-item-group>
-            <el-menu-item-group title="提交过的异常信息">
-              <el-menu-item index="1-3" @click="toListExInformation"
-                >已提交的异常信息</el-menu-item
-              >
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-menu-item index="3">
+
+          <el-menu-item index="2" @click="toListExInformation">
             <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
+            <span slot="title">查看异常信息</span>
           </el-menu-item>
-          <el-menu-item index="4">
+
+          <el-menu-item index="3" @click="toListTesting">
             <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
+            <span slot="title">查看检测数据</span>
+          </el-menu-item>
+          <el-menu-item index="4" @click="toListAssign">
+            <i class="el-icon-location"></i>
+            <span slot="title">查看委派信息</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -83,26 +65,27 @@ export default {
         }
       });
     },
-    toEstimated() {
-      this.$router.push("/Estimated").catch((error) => {
-        if (error.name !== "NavigationDuplicated") {
-          throw error;
-        } else {
-          console.log("Navigation duplicated");
-        }
-      });
-    },
-    toSubmitExInformation() {
-      this.$router.push("/SubmitExInformation").catch((error) => {
-        if (error.name !== "NavigationDuplicated") {
-          throw error;
-        } else {
-          console.log("Navigation duplicated");
-        }
-      });
-    },
     toListExInformation() {
+      console.log("hhhh");
       this.$router.push("/ListExInformation").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toListTesting() {
+      this.$router.push("/ListTesting").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toListAssign() {
+      this.$router.push("/ListAssign").catch((error) => {
         if (error.name !== "NavigationDuplicated") {
           throw error;
         } else {
