@@ -5,6 +5,7 @@ import Home from "@/views/Home/index.vue";
 import ListAssign from "@/views/ListAssign/index.vue";
 import ListTesting from "@/views/ListTesting/index.vue";
 import ListExInformation from "@/views/ListExInformation/index.vue";
+import Login from "@/views/Login/index.vue";
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,9 @@ const routes = [
         component: ListExInformation,
       },
     ],
+    path: "/Login",
+    name: "Login",
+    component: Login,
   },
 ];
 
