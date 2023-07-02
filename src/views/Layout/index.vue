@@ -34,6 +34,10 @@
             <i class="el-icon-location"></i>
             <span slot="title">查看图标信息</span>
           </el-menu-item>
+          <el-menu-item index="6" @click="toAQIDistribution">
+            <i class="el-icon-location"></i>
+            <span slot="title">AQI分布</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -102,6 +106,15 @@ export default {
     },
     toChart() {
       this.$router.push("/Chart").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toAQIDistribution() {
+      this.$router.push("/AQIDistribution").catch((error) => {
         if (error.name !== "NavigationDuplicated") {
           throw error;
         } else {
