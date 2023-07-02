@@ -42,6 +42,10 @@
             <i class="el-icon-location"></i>
             <span slot="title">AQI雷达</span>
           </el-menu-item>
+          <el-menu-item index="8" @click="toAQIBubbleChart">
+            <i class="el-icon-location"></i>
+            <span slot="title">AQI气泡</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -128,6 +132,15 @@ export default {
     },
     toAQIRadarChart() {
       this.$router.push("/AQIRadarChart").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toAQIBubbleChart() {
+      this.$router.push("/AQIBubbleChart").catch((error) => {
         if (error.name !== "NavigationDuplicated") {
           throw error;
         } else {

@@ -9,6 +9,7 @@ import Login from "@/views/Login/index.vue";
 import Chart from "@/views/Chart/index.vue";
 import AQIDistribution from "@/views/AQIDistribution/index.vue";
 import AQIRadarChart from "@/views/AQIRadarChart/index.vue";
+import AQIBubbleChart from "@/views/AQIBubbleChart/index.vue";
 
 Vue.use(VueRouter);
 
@@ -52,6 +53,11 @@ const routes = [
         path: "/AQIRadarChart",
         name: "AQIRadarChart",
         component: AQIRadarChart,
+      },
+      {
+        path: "/AQIBubbleChart",
+        name: "AQIBubbleChart",
+        component: AQIBubbleChart,
       },
     ],
   },
