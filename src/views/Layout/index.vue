@@ -30,6 +30,10 @@
             <i class="el-icon-location"></i>
             <span slot="title">查看委派信息</span>
           </el-menu-item>
+          <el-menu-item index="5" @click="toChart">
+            <i class="el-icon-location"></i>
+            <span slot="title">查看图标信息</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -89,6 +93,15 @@ export default {
     },
     toListAssign() {
       this.$router.push("/ListAssign").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toChart() {
+      this.$router.push("/Chart").catch((error) => {
         if (error.name !== "NavigationDuplicated") {
           throw error;
         } else {
