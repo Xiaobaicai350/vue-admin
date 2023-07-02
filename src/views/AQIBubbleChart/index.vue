@@ -149,16 +149,16 @@ export default {
           formatter: function (param) {
             var value = param.value;
             // prettier-ignore
-            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3);color: black; font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
                 + param.seriesName + ' ' + value[0] + '日：'
                 + value[7]
-                + '</div>'
+                + '</div><div style="color: black;">'
                 + schema[1].text + '：' + value[1] + '<br>'
                 + schema[2].text + '：' + value[2] + '<br>'
                 + schema[3].text + '：' + value[3] + '<br>'
                 + schema[4].text + '：' + value[4] + '<br>'
                 + schema[5].text + '：' + value[5] + '<br>'
-                + schema[6].text + '：' + value[6] + '<br>';
+                + schema[6].text + '：' + value[6] + '<br>'+"</div>";
           },
         },
         xAxis: {
