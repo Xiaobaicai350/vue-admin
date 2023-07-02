@@ -7,7 +7,10 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
-          style="height: 852px"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+          style="height: 740px"
         >
           <el-menu-item index="1" @click="toHome">
             <i class="el-icon-menu"></i>
@@ -108,5 +111,13 @@ export default {
   background-color: #ffffff;
   color: #333;
   line-height: 60px;
+}
+.el-main {
+  position: absolute;
+  left: 300px;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  overflow-y: scroll;
 }
 </style>
