@@ -8,6 +8,7 @@ import ListExInformation from "@/views/ListExInformation/index.vue";
 import Login from "@/views/Login/index.vue";
 import Chart from "@/views/Chart/index.vue";
 import AQIDistribution from "@/views/AQIDistribution/index.vue";
+import AQIRadarChart from "@/views/AQIRadarChart/index.vue";
 
 Vue.use(VueRouter);
 
@@ -46,6 +47,11 @@ const routes = [
         path: "/AQIDistribution",
         name: "AQIDistribution",
         component: AQIDistribution,
+      },
+      {
+        path: "/AQIRadarChart",
+        name: "AQIRadarChart",
+        component: AQIRadarChart,
       },
     ],
   },
