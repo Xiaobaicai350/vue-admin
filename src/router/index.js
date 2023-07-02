@@ -6,6 +6,7 @@ import ListAssign from "@/views/ListAssign/index.vue";
 import ListTesting from "@/views/ListTesting/index.vue";
 import ListExInformation from "@/views/ListExInformation/index.vue";
 import Login from "@/views/Login/index.vue";
+import Chart from "@/views/Chart/index.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes = [
         path: "/ListExInformation",
         name: "ListExInformation",
         component: ListExInformation,
+      },
+      {
+        path: "/Chart",
+        name: "Chart",
+        component: Chart,
       },
     ],
   },
