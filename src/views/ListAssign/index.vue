@@ -6,7 +6,7 @@
     </el-table-column>
     <el-table-column prop="status" label="status" width="180">
     </el-table-column>
-    <el-table-column prop="supervisorId" label="supervisorId" width="180">
+    <el-table-column prop="publicName" label="publicName" width="180">
     </el-table-column>
 
     <el-table-column prop="vAQILevel" label="vAQILevel" width="100">

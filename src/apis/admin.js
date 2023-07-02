@@ -8,10 +8,18 @@ export const listAllUnassignedExInfo = () => {
     method: "GET",
   });
 };
-// 获取所有已经指派给监督员的异常信息
+// 获取所有异常信息
 export const listAssigned = () => {
   return request({
     url: "/admin/getMessage",
+    method: "GET",
+  });
+};
+
+// 获取委派给每个检测员的异常信息
+export const listAssignedInfo = () => {
+  return request({
+    url: "/admin",
     method: "GET",
   });
 };

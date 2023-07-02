@@ -3,7 +3,7 @@
     <el-table :data="tableData" stripe style="width: 100%">
       <el-table-column prop="updateTime" label="日期" width="180">
       </el-table-column>
-      <el-table-column prop="supervisorId" label="举报人姓名" width="180">
+      <el-table-column prop="publicName" label="举报人姓名" width="180">
       </el-table-column>
       <el-table-column prop="address" label="地址"> </el-table-column>
       <el-table-column prop="vAQILevel" label="预测AQI等级"> </el-table-column>
@@ -82,6 +82,9 @@ export default {
   async mounted() {
     const data = await listAllUnassignedExInfo();
     console.log(data);
+    for (let i = 0; i < data.data.length; i++) {
+      data.data[i].updateTime = data.data[i].updateTime.substring(0, 19);
+    }
     this.tableData = data.data;
     console.log("我是ListExInformation的mounted方法");
   },

@@ -36,6 +36,8 @@ const routes = [
         component: ListExInformation,
       },
     ],
+  },
+  {
     path: "/Login",
     name: "Login",
     component: Login,
