@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-container>
+    <el-container style="display: flex">
       <el-aside>
         <el-menu
           default-active="2"
@@ -49,7 +49,7 @@
         </el-menu>
       </el-aside>
 
-      <el-container>
+      <el-container style="flex: 1">
         <el-header style="text-align: right; font-size: 16px">
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px"></i>
