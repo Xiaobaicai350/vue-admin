@@ -59,7 +59,7 @@
               <el-dropdown-item>删除</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>管理员名字</span>
+          <span>{{ this.adminInfo.name }}</span>
         </el-header>
         <!-- 一个分割线 -->
         <el-divider></el-divider>
@@ -157,7 +157,7 @@ export default {
       console.log(key, keyPath);
     },
   },
-  async onMounted() {
+  async mounted() {
     const data = await info();
     this.adminInfo = data.data;
   },
