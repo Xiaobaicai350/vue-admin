@@ -10,6 +10,9 @@ const httpInstance = axios.create({
 // axios请求拦截器
 httpInstance.interceptors.request.use(
   (config) => {
+    let token = window.localStorage.getItem("token");
+    token && (config.headers.token = token);
+    console.log(config);
     return config;
   },
   (e) => Promise.reject(e)

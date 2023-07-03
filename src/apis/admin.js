@@ -34,3 +34,11 @@ export const login = ({ id, password }) => {
     },
   });
 };
+
+//监督员登录
+export const info = () => {
+  return request({
+    url: "/staff/info",
+    method: "GET",
+  });
+};

@@ -75,14 +75,7 @@ export default {
             trigger: "blur",
           },
         ],
-        // 设置验证码效验规则
-        code: [
-          { required: true, message: "请输入验证码", trigger: "blur" },
-          { min: 5, max: 5, message: "长度为 5 个字符", trigger: "blur" },
-        ],
       },
-      // 绑定验证码图片
-      codeImg: null,
     };
   },
   methods: {

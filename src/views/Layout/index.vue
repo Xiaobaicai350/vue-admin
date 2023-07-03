@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import { info } from "@/apis/admin.js";
 export default {
   methods: {
     toHome() {
@@ -155,6 +156,15 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
+  },
+  async onMounted() {
+    const data = await info();
+    this.AQIInfo = data.data;
+  },
+  data() {
+    return {
+      AQIInfo: {},
+    };
   },
 };
 </script>
