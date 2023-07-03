@@ -20,8 +20,8 @@
           label-width="21%"
           class="loginForm"
         >
-          <el-form-item label="账户" prop="username" style="width: 380px">
-            <el-input v-model="loginForm.username"></el-input>
+          <el-form-item label="账户" prop="id" style="width: 380px">
+            <el-input v-model="loginForm.id"></el-input>
           </el-form-item>
           <el-form-item label="密码" prop="password" style="width: 380px">
             <el-input type="password" v-model="loginForm.password"></el-input>
@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import { login } from "@/apis/admin.js";
+
 export default {
   name: "Login",
   data() {
@@ -47,20 +49,14 @@ export default {
       // 表单信息
       loginForm: {
         // 账户数据
-        username: "",
+        id: "123456",
         // 密码数据
-        password: "",
-        // 验证码数据
-        code: "",
-        // 记住密码
-        remember: false,
-        // 验证码的key，因为前后端分离，这里验证码不能由后台存入session，所以交给vue状态管理
-        codeToken: "",
+        password: "123456",
       },
       // 表单验证
       rules: {
         // 设置账户效验规则
-        username: [
+        id: [
           { required: true, message: "请输入账户", trigger: "blur" },
           {
             min: 3,
@@ -91,11 +87,21 @@ export default {
   },
   methods: {
     // 提交表单
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
+    async submitForm(formName) {
+      this.$refs[formName].validate(async (valid) => {
         if (valid) {
           // 表单验证成功
-          alert("submit");
+          const data = await login(this.loginForm);
+          console.log(data);
+          if (data.code === 20000) {
+            console.log("登录成功");
+            localStorage.setItem("token", data.data.token);
+            this.$router.push("/");
+          } else {
+            console.log("登录失败了");
+            alert("登录失败了");
+          }
+          console.log("submit!");
         } else {
           console.log("error submit!!");
           return false;

@@ -23,3 +23,14 @@ export const listAssignedInfo = () => {
     method: "GET",
   });
 };
+//监督员登录
+export const login = ({ id, password }) => {
+  return request({
+    url: "/admin/login",
+    method: "POST",
+    data: {
+      id,
+      password,
+    },
+  });
+};
