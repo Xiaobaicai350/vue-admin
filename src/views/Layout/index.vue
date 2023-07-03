@@ -159,11 +159,11 @@ export default {
   },
   async onMounted() {
     const data = await info();
-    this.AQIInfo = data.data;
+    this.adminInfo = data.data;
   },
   data() {
     return {
-      AQIInfo: {},
+      adminInfo: {},
     };
   },
 };
