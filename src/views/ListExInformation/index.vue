@@ -1,12 +1,16 @@
 <template>
   <div>
     <el-table :data="tableData" stripe style="width: 100%">
-      <el-table-column prop="id" label="id"> </el-table-column>
-      <el-table-column prop="updateTime" label="日期"> </el-table-column>
-      <el-table-column prop="publicName" label="举报人姓名"> </el-table-column>
-      <el-table-column prop="address" label="地址"> </el-table-column>
-      <el-table-column prop="vAQILevel" label="预测AQI等级"> </el-table-column>
-      <el-table-column prop="status" label="是否委派过了">
+      <el-table-column prop="id" label="id" width="100"> </el-table-column>
+      <el-table-column prop="updateTime" label="日期" width="170">
+      </el-table-column>
+      <el-table-column prop="publicName" label="举报人姓名" width="100">
+      </el-table-column>
+      <el-table-column prop="address" label="地址" width="100">
+      </el-table-column>
+      <el-table-column prop="vAQILevel" label="预测AQI等级" width="110">
+      </el-table-column>
+      <el-table-column prop="status" label="是否委派过了" width="110">
         <template slot-scope="scope">
           <span v-if="scope.row.status === 1">已委派</span>
           <span v-else-if="scope.row.status === 0">未委派</span>
@@ -15,14 +19,24 @@
       <el-table-column prop="description" label="描述"> </el-table-column>
 
       <!-- 最后一列 -->
-      <el-table-column label="操作">
+      <el-table-column label="操作" width="100">
         <template slot-scope="scope">
           <el-button
             size="mini"
             type="primary"
             @click="handleAssign(scope.$index, scope.row)"
+            v-if="scope.row.status === 0"
           >
             委派
+          </el-button>
+          <el-button
+            size="mini"
+            type="primary"
+            @click="handleAssign(scope.$index, scope.row)"
+            disabled
+            v-else
+          >
+            已委派
           </el-button>
         </template>
       </el-table-column>
