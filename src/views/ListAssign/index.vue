@@ -1,9 +1,14 @@
 <style></style>
 <template>
   <el-table :data="tableData" stripe style="width: 100%">
-    <el-table-column prop="id" label="id" width="180"> </el-table-column>
+    <el-table-column prop="id" label="id" width="40"> </el-table-column>
     <el-table-column prop="updateTime" label="日期"> </el-table-column>
-    <el-table-column prop="status" label="是否委派过了"> </el-table-column>
+    <el-table-column prop="status" label="是否委派过了">
+      <template slot-scope="scope">
+        <span v-if="scope.row.status === 1">已委派</span>
+        <span v-else-if="scope.row.status === 0">未委派</span>
+      </template>
+    </el-table-column>
     <el-table-column prop="publicName" label="举报人姓名"> </el-table-column>
 
     <el-table-column prop="vAQILevel" label="预估AQI等级"> </el-table-column>
