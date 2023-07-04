@@ -1,10 +1,9 @@
 <template>
   <div>
     <el-table :data="tableData" stripe style="width: 100%">
-      <el-table-column prop="updateTime" label="日期" width="180">
-      </el-table-column>
-      <el-table-column prop="publicName" label="举报人姓名" width="180">
-      </el-table-column>
+      <el-table-column prop="id" label="id"> </el-table-column>
+      <el-table-column prop="updateTime" label="日期"> </el-table-column>
+      <el-table-column prop="publicName" label="举报人姓名"> </el-table-column>
       <el-table-column prop="address" label="地址"> </el-table-column>
       <el-table-column prop="vAQILevel" label="预测AQI等级"> </el-table-column>
       <el-table-column prop="status" label="状态"> </el-table-column>
@@ -52,7 +51,7 @@
 </template>
 
 <script>
-import { listAllUnassignedExInfo } from "@/apis/admin.js";
+import { listExInfo } from "@/apis/admin.js";
 export default {
   data() {
     return {
@@ -60,6 +59,7 @@ export default {
 
       dialogFormVisible: false,
       form: {
+        id: "",
         name: "",
         region: "",
         date1: "",
@@ -80,7 +80,7 @@ export default {
   },
   components: {},
   async mounted() {
-    const data = await listAllUnassignedExInfo();
+    const data = await listExInfo();
     console.log(data);
     for (let i = 0; i < data.data.length; i++) {
       data.data[i].updateTime = data.data[i].updateTime.substring(0, 19);

@@ -13,8 +13,8 @@ export const login = ({ id, password }) => {
   });
 };
 
-// 获取所有委派信息
-export const listAssigned = () => {
+// 获取所有异常信息
+export const listExInfo = () => {
   return request({
     url: "/admin/getMessage",
     method: "GET",
