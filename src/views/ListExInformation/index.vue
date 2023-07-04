@@ -6,7 +6,7 @@
       <el-table-column prop="publicName" label="举报人姓名"> </el-table-column>
       <el-table-column prop="address" label="地址"> </el-table-column>
       <el-table-column prop="vAQILevel" label="预测AQI等级"> </el-table-column>
-      <el-table-column prop="status" label="状态"> </el-table-column>
+      <el-table-column prop="status" label="是否委派过了"> </el-table-column>
       <el-table-column prop="description" label="描述"> </el-table-column>
 
       <!-- 最后一列 -->

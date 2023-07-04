@@ -2,14 +2,14 @@
 <template>
   <el-table :data="tableData" stripe style="width: 100%">
     <el-table-column prop="id" label="id"> </el-table-column>
-    <el-table-column prop="exMessage.address" label="address">
+    <el-table-column prop="exMessage.address" label="异常地址">
     </el-table-column>
-    <el-table-column prop="exMessage.description" label="description">
+    <el-table-column prop="exMessage.description" label="异常描述">
     </el-table-column>
-    <el-table-column prop="publicName" label="publicName"> </el-table-column>
-    <el-table-column prop="staffName" label="staffName"> </el-table-column>
-    <el-table-column prop="updateTime" label="updateTime"> </el-table-column>
-    <el-table-column prop="aqilevel" label="aqilevel"> </el-table-column>
+    <el-table-column prop="publicName" label="举报人姓名"> </el-table-column>
+    <el-table-column prop="staffName" label="AQI检测员姓名"> </el-table-column>
+    <el-table-column prop="updateTime" label="更新时间"> </el-table-column>
+    <el-table-column prop="aqilevel" label="AQI等级"> </el-table-column>
     <el-table-column prop="CO" label="CO"> </el-table-column>
     <el-table-column prop="PM" label="PM2.5"> </el-table-column>
     <el-table-column prop="SO2" label="SO2"> </el-table-column>
