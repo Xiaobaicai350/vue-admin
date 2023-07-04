@@ -30,9 +30,9 @@ export const listAssignedInfo = () => {
 };
 
 // 把异常信息指派给检测员
-export const postExToAQI = () => {
+export const postExToAQI = (exId, aqiId) => {
   return request({
-    url: "/admin/giveStaff/:exId/:aqiId",
+    url: `/admin/giveStaff/${exId}/${aqiId}`,
     method: "POST",
   });
 };

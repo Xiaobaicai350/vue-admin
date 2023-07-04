@@ -27,20 +27,30 @@
     <template>
       <div>
         <el-dialog title="委派" :visible.sync="dialogFormVisible">
+          <el-divider>AQI检测员信息</el-divider>
+          <el-table :data="tableData2" style="width: 100%">
+            <el-table-column prop="id" label="id"> </el-table-column>
+            <el-table-column prop="name" label="name"> </el-table-column>
+            <el-table-column prop="telephone" label="telephone">
+            </el-table-column>
+          </el-table>
+          <el-divider>请提交表单</el-divider>
+
           <el-form :model="form">
-            <el-form-item label="委派事件id" :label-width="formLabelWidth">
-              <el-input v-model="form.name" autocomplete="off"></el-input>
-            </el-form-item>
             <el-form-item label="选择委派人名称" :label-width="formLabelWidth">
-              <el-select v-model="form.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai"></el-option>
-                <el-option label="区域二" value="beijing"></el-option>
+              <el-select v-model="form.aqiId" placeholder="请选择委派人">
+                <el-option
+                  v-for="item in tableData2"
+                  :key="item.id"
+                  :label="item.name"
+                  :value="item.id"
+                ></el-option>
               </el-select>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogFormVisible = false"
+            <el-button type="primary" @click="closeDialogAndPut"
               >确 定</el-button
             >
           </div>
@@ -51,31 +61,41 @@
 </template>
 
 <script>
-import { listExInfo } from "@/apis/admin.js";
+import { listExInfo, getStaff, postExToAQI } from "@/apis/admin.js";
+
 export default {
   data() {
     return {
       tableData: [],
-
+      tableData2: [],
       dialogFormVisible: false,
       form: {
-        id: "",
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
+        aqiId: null,
       },
       formLabelWidth: "120px",
+      exId: null,
     };
   },
   methods: {
     handleAssign(index, row) {
       this.dialogFormVisible = true;
+      this.exId = row.id;
       console.log(index, row);
+    },
+    async closeDialogAndPut() {
+      console.log(this.form.aqiId);
+      console.log(this.exId);
+      const data = await postExToAQI(this.exId, this.form.aqiId);
+      if (data.code === 20000) {
+        console.log("委派成功啦");
+        this.$message({
+          message: "恭喜你，委派成功啦",
+          type: "success",
+        });
+      } else {
+        this.$message.error("委派失败");
+      }
+      this.dialogFormVisible = false;
     },
   },
   components: {},
@@ -87,6 +107,10 @@ export default {
     }
     this.tableData = data.data;
     console.log("我是ListExInformation的mounted方法");
+
+    const data2 = await getStaff();
+    console.log(data2);
+    this.tableData2 = data2.data;
   },
 };
 </script>
