@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { listAssigned } from "@/apis/admin.js";
+import { listAssignedInfo } from "@/apis/admin.js";
 export default {
   data() {
     return {
@@ -26,7 +26,7 @@ export default {
     };
   },
   async mounted() {
-    const data = await listAssigned();
+    const data = await listAssignedInfo();
     console.log(data);
     // 2023-07-02T07:23:51、
     for (let i = 0; i < data.data.length; i++) {
