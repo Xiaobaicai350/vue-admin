@@ -7,6 +7,7 @@
 <script>
 export default {
   name: "Echarts",
+
   methods: {
     myEcharts() {
       // 基于准备好的dom，初始化echarts实例
@@ -40,6 +41,16 @@ export default {
   },
   mounted() {
     this.myEcharts();
+    const h = this.$createElement;
+
+    this.$notify({
+      title: "欢迎来到管理员端",
+      message: h(
+        "i",
+        { style: "color: teal" },
+        "近年来，为了促进生态环境保护行业的发展，我国陆续发布了一系列相关政策。并且鼓励公众参与，强化社会监督，依法监测各类生态环境超标行为，持续改善环境质量。基于此背景，建设环保公众监督系统。本系统致力于建立环保公众监督平台，拓宽监督渠道，增加环保工作透明度，不断完善公众监督机制，切实增强环境保护实效。"
+      ),
+    });
   },
 };
 </script>

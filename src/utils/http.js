@@ -1,7 +1,7 @@
 // axios基础的封装
 import axios from "axios";
 const httpInstance = axios.create({
-  baseURL: "http://10.66.78.86:8080",
+  baseURL: "http://10.62.61.244:8080",
   timeout: 5000,
 });
 
