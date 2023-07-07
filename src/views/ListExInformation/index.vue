@@ -111,10 +111,18 @@ export default {
           message: "恭喜你，委派成功啦",
           type: "success",
         });
+        this.updateData();
       } else {
         this.$message.error("委派失败");
       }
       this.dialogFormVisible = false;
+    },
+    async updateData() {
+      const data = await listExInfo();
+      for (let i = 0; i < data.data.length; i++) {
+        data.data[i].updateTime = data.data[i].updateTime.substring(0, 19);
+      }
+      this.tableData = data.data;
     },
   },
   components: {},
