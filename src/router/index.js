@@ -10,6 +10,9 @@ import Chart from "@/views/Chart/index.vue";
 import AQIDistribution from "@/views/AQIDistribution/index.vue";
 import AQIRadarChart from "@/views/AQIRadarChart/index.vue";
 import AQIBubbleChart from "@/views/AQIBubbleChart/index.vue";
+import AQIOver from "@/views/AQIOver/index.vue";
+import AQIMonthOver from "@/views/AQIOver/index.vue";
+import AQICount from "@/views/AQIOver/index.vue";
 
 Vue.use(VueRouter);
 
@@ -58,6 +61,21 @@ const routes = [
         path: "/AQIBubbleChart",
         name: "AQIBubbleChart",
         component: AQIBubbleChart,
+      },
+      {
+        path: "/AQIOver",
+        name: "AQIOver",
+        component: AQIOver,
+      },
+      {
+        path: "/AQIMonthOver",
+        name: "AQIMonthOver",
+        component: AQIMonthOver,
+      },
+      {
+        path: "/AQICount",
+        name: "AQICount",
+        component: AQICount,
       },
     ],
   },

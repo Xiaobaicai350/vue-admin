@@ -46,6 +46,18 @@
             <i class="el-icon-location"></i>
             <span slot="title">AQI气泡</span>
           </el-menu-item>
+          <el-menu-item index="9" @click="toAQIOver">
+            <i class="el-icon-location"></i>
+            <span slot="title">以省为分组的AQI浓度等级超标数量</span>
+          </el-menu-item>
+          <el-menu-item index="10" @click="toAQICount">
+            <i class="el-icon-location"></i>
+            <span slot="title">以AQI六个等级为分组的每个等级的AQI分布数量</span>
+          </el-menu-item>
+          <el-menu-item index="11" @click="toAQIMonthOver">
+            <i class="el-icon-location"></i>
+            <span slot="title">过去十个月里，每个月的AQI浓度超标数量</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -142,6 +154,33 @@ export default {
     },
     toAQIBubbleChart() {
       this.$router.push("/AQIBubbleChart").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toAQIOver() {
+      this.$router.push("/AQIOver").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toAQICount() {
+      this.$router.push("/AQICount").catch((error) => {
+        if (error.name !== "NavigationDuplicated") {
+          throw error;
+        } else {
+          console.log("Navigation duplicated");
+        }
+      });
+    },
+    toAQIMonthOver() {
+      this.$router.push("/AQIMonthOver").catch((error) => {
         if (error.name !== "NavigationDuplicated") {
           throw error;
         } else {
