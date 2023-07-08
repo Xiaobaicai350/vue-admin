@@ -1,6 +1,10 @@
 <style></style>
 <template>
-  <el-table :data="tableData" stripe style="width: 100%">
+  <el-table
+    :data="tableData"
+    style="width: 100%"
+    :row-class-name="tableRowClassName"
+  >
     <el-table-column prop="id" label="id" width="40"> </el-table-column>
     <el-table-column prop="updateTime" label="日期"> </el-table-column>
     <el-table-column prop="status" label="是否检测过了">
@@ -36,5 +40,22 @@ export default {
     }
     this.tableData = data.data;
   },
+  methods: {
+    tableRowClassName({ row, rowIndex }) {
+      if (row.status === 1) {
+        return "success-row";
+      }
+      return "";
+    },
+  },
 };
 </script>
+<style>
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
+</style>

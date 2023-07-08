@@ -73,3 +73,9 @@ export const getCount = () => {
     method: "GET",
   });
 };
+export const getOverByDate = () => {
+  return request({
+    url: "/admin/getOverByDate",
+    method: "GET",
+  });
+};

@@ -33,15 +33,15 @@
 
           <el-menu-item index="5" @click="toAQIOver">
             <i class="el-icon-location"></i>
-            <span slot="title">以省为分组的AQI浓度等级超标数量</span>
+            <span slot="title">查看省级AQI浓度</span>
           </el-menu-item>
           <el-menu-item index="6" @click="toAQICount">
             <i class="el-icon-location"></i>
-            <span slot="title">以AQI六个等级为分组的每个等级的AQI分布数量</span>
+            <span slot="title">查看AQI数据分布</span>
           </el-menu-item>
           <el-menu-item index="7" @click="toAQIMonthOver">
             <i class="el-icon-location"></i>
-            <span slot="title">过去十个月里，每个月的AQI浓度超标数量</span>
+            <span slot="title">查看过去十月的AQI超标数</span>
           </el-menu-item>
           <el-menu-item index="8" @click="toChart">
             <i class="el-icon-location"></i>

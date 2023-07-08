@@ -49,9 +49,9 @@ export default {
       // 表单信息
       loginForm: {
         // 账户数据
-        id: "123456",
+        id: "",
         // 密码数据
-        password: "123456",
+        password: "",
       },
       // 表单验证
       rules: {
