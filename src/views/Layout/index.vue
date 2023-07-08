@@ -30,33 +30,34 @@
             <i class="el-icon-location"></i>
             <span slot="title">查看委派信息</span>
           </el-menu-item>
-          <el-menu-item index="5" @click="toChart">
-            <i class="el-icon-location"></i>
-            <span slot="title">查看图标信息</span>
-          </el-menu-item>
-          <el-menu-item index="6" @click="toAQIDistribution">
-            <i class="el-icon-location"></i>
-            <span slot="title">AQI分布</span>
-          </el-menu-item>
-          <el-menu-item index="7" @click="toAQIRadarChart">
-            <i class="el-icon-location"></i>
-            <span slot="title">AQI雷达</span>
-          </el-menu-item>
-          <el-menu-item index="8" @click="toAQIBubbleChart">
-            <i class="el-icon-location"></i>
-            <span slot="title">AQI气泡</span>
-          </el-menu-item>
-          <el-menu-item index="9" @click="toAQIOver">
+
+          <el-menu-item index="5" @click="toAQIOver">
             <i class="el-icon-location"></i>
             <span slot="title">以省为分组的AQI浓度等级超标数量</span>
           </el-menu-item>
-          <el-menu-item index="10" @click="toAQICount">
+          <el-menu-item index="6" @click="toAQICount">
             <i class="el-icon-location"></i>
             <span slot="title">以AQI六个等级为分组的每个等级的AQI分布数量</span>
           </el-menu-item>
-          <el-menu-item index="11" @click="toAQIMonthOver">
+          <el-menu-item index="7" @click="toAQIMonthOver">
             <i class="el-icon-location"></i>
             <span slot="title">过去十个月里，每个月的AQI浓度超标数量</span>
+          </el-menu-item>
+          <el-menu-item index="8" @click="toChart">
+            <i class="el-icon-location"></i>
+            <span slot="title">查看图标信息</span>
+          </el-menu-item>
+          <el-menu-item index="9" @click="toAQIDistribution">
+            <i class="el-icon-location"></i>
+            <span slot="title">AQI分布</span>
+          </el-menu-item>
+          <el-menu-item index="10" @click="toAQIRadarChart">
+            <i class="el-icon-location"></i>
+            <span slot="title">AQI雷达</span>
+          </el-menu-item>
+          <el-menu-item index="11" @click="toAQIBubbleChart">
+            <i class="el-icon-location"></i>
+            <span slot="title">AQI气泡</span>
           </el-menu-item>
         </el-menu>
       </el-aside>

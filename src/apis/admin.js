@@ -60,3 +60,16 @@ export const info = () => {
     method: "GET",
   });
 };
+
+export const getOver = () => {
+  return request({
+    url: "/admin/getOver",
+    method: "GET",
+  });
+};
+export const getCount = () => {
+  return request({
+    url: "/admin/getCount",
+    method: "GET",
+  });
+};

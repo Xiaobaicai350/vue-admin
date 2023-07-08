@@ -11,8 +11,8 @@ import AQIDistribution from "@/views/AQIDistribution/index.vue";
 import AQIRadarChart from "@/views/AQIRadarChart/index.vue";
 import AQIBubbleChart from "@/views/AQIBubbleChart/index.vue";
 import AQIOver from "@/views/AQIOver/index.vue";
-import AQIMonthOver from "@/views/AQIOver/index.vue";
-import AQICount from "@/views/AQIOver/index.vue";
+import AQIMonthOver from "@/views/AQIMonthOver/index.vue";
+import AQICount from "@/views/AQICount/index.vue";
 
 Vue.use(VueRouter);
 
@@ -23,7 +23,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: "",
+        path: "/",
         name: "Home",
         component: Home,
       },

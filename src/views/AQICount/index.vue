@@ -5,18 +5,15 @@
 </template>
 
 <script>
+import { getCount } from "@/apis/admin.js";
 export default {
   name: "Echarts",
 
-  methods: {
-    myEcharts() {
-      // 基于准备好的dom，初始化echarts实例
-      var myChart = this.$echarts.init(document.getElementById("main"));
-
-      // 指定图表的配置项和数据
-      var option = {
+  data() {
+    return {
+      option: {
         title: {
-          text: "以省为分组的AQI浓度等级超标数量",
+          text: "以AQI六个等级为分组的每个等级的AQI分布数量",
         },
         tooltip: {},
         legend: {
@@ -33,22 +30,37 @@ export default {
             data: [50, 20, 36, 10, 10, 20],
           },
         ],
-      };
+      },
+    };
+  },
+  methods: {
+    myEcharts() {
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = this.$echarts.init(document.getElementById("main"));
+
+      // 指定图表的配置项和数据
+      var option = this.option;
 
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
     },
   },
-  mounted() {
+  async mounted() {
+    const data = await getCount();
+    for (let i = 0; i < data.data.length; i++) {
+      this.option.xAxis.data[i] = data.data[i].aqilevel;
+      this.option.series[0].data[i] = data.data[i].cou;
+    }
+    // console.log(this.option);
+
     this.myEcharts();
     const h = this.$createElement;
-
     this.$notify({
-      title: "以省为分组的AQI浓度等级超标数量",
+      title: "以AQI六个等级为分组的每个等级的AQI分布数量",
       message: h(
         "i",
         { style: "color: teal" },
-        "注意：AQI三级以上（包含三级即为超标）"
+        "注意：AQI共有六级，以数据库中含有的数据进行动态显示）"
       ),
     });
   },
