@@ -16,7 +16,7 @@ export default {
       // 指定图表的配置项和数据
       var option = {
         title: {
-          text: "以省为分组的AQI浓度等级超标数量",
+          text: "过去十个月里，每个月的AQI浓度超标数量",
         },
         tooltip: {},
         legend: {
@@ -44,11 +44,11 @@ export default {
     const h = this.$createElement;
 
     this.$notify({
-      title: "以省为分组的AQI浓度等级超标数量",
+      title: "过去十个月里，每个月的AQI浓度超标数量",
       message: h(
         "i",
         { style: "color: teal" },
-        "注意：AQI三级以上（包含三级即为超标）"
+        "注意：过去十个月，AQI三级以上（包含三级）即为超标"
       ),
     });
   },

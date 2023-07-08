@@ -61,7 +61,7 @@ export default {
       message: h(
         "i",
         { style: "color: teal" },
-        "注意：AQI三级以上（包含三级即为超标）"
+        "注意：AQI三级以上（包含三级）即为超标"
       ),
     });
   },
